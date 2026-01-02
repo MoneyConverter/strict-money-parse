@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Test Coverage](https://img.shields.io/badge/coverage-99.2%25-brightgreen?style=flat-square)](https://github.com/yourusername/strict-money-parse)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/yourusername/strict-money-parse/ci.yml?style=flat-square)](https://github.com/yourusername/strict-money-parse/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/MoneyConverter/strict-money-parse/ci.yml?style=flat-square)](https://github.com/MoneyConverter/strict-money-parse/actions)
 
 **A production-ready TypeScript library for parsing monetary values from real-world strings with evidence-based currency detection.**
 
@@ -22,12 +22,13 @@ Zero runtime dependencies • Fully typed • Extensively tested against real e-
 - [🚀 Quick Start](#-quick-start)
 - [📖 API Reference](#-api-reference)
 - [💡 Usage Examples](#-usage-examples)
-  - [European Number Formats](#european-number-formats)
-  - [Asian Currencies](#asian-currencies)
-  - [Handling Ambiguous Symbols](#handling-ambiguous-symbols)
-  - [ISO 4217 Code Detection](#iso-4217-code-detection)
-  - [False Positive Prevention](#false-positive-prevention)
-  - [HTML Content Parsing](#html-content-parsing)
+   - [European Number Formats](#european-number-formats)
+   - [Asian Currencies](#asian-currencies)
+   - [Handling Ambiguous Symbols](#handling-ambiguous-symbols)
+   - [ISO 4217 Code Detection](#iso-4217-code-detection)
+   - [False Positive Prevention](#false-positive-prevention)
+   - [HTML Content Parsing](#html-content-parsing)
+
 - [🔍 Advanced API](#-advanced-api)
 - [🧮 Number Format Detection](#-number-format-detection)
 - [🗂️ Project Structure](#️-project-structure)
@@ -43,7 +44,6 @@ Zero runtime dependencies • Fully typed • Extensively tested against real e-
 - [🗺️ Roadmap](#️-roadmap)
 
 ---
-
 
 ---
 
@@ -91,7 +91,8 @@ pnpm add strict-money-parse
 ```bash
 bun add strict-money-parse
 ```
-```
+
+```groovy
 
 **Requirements:** Node.js ≥18.0.0
 
@@ -136,9 +137,9 @@ Parses a monetary value from a string with automatic currency detection.
 
 - **\`input\`** (string) – The string containing a price/monetary value
 - **\`options\`** (ParseOptions, optional):
-  - \`domain?: string\` – Domain/URL hint for ambiguous currency resolution
-  - \`ignorePercentages?: boolean\` – Whether to ignore percentages (default: \`false\`)
-  - \`maxFractionDigits?: number\` – Maximum decimal places (default: \`3\`)
+   - \`domain?: string\` – Domain/URL hint for ambiguous currency resolution
+   - \`ignorePercentages?: boolean\` – Whether to ignore percentages (default: \`false\`)
+   - \`maxFractionDigits?: number\` – Maximum decimal places (default: \`3\`)
 
 #### Returns: \`ParseResult\`
 

@@ -2,15 +2,34 @@
   "name": "strict-money-parse",
   "version": "1.0.0",
   "description": "Strict TypeScript library for parsing monetary values from strings with evidence-based currency detection",
-  "author": "",
+  "author": {
+    "name": "Yurii Dejurin",
+    "url": "https://github.com/dejurin"
+  },
   "license": "MIT",
+  "homepage": "https://moneyconvert.net/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoneyConverter/strict-money-parse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MoneyConverter/strict-money-parse/issues"
+  },
   "keywords": [
     "money",
     "currency",
     "parser",
     "price",
     "iso4217",
-    "typescript"
+    "typescript",
+    "money-parser",
+    "currency-detection",
+    "price-parser",
+    "forex",
+    "exchange-rate",
+    "financial",
+    "payment",
+    "e-commerce"
   ],
   "type": "module",
   "main": "./dist/index.cjs",
@@ -34,7 +53,8 @@
   },
   "scripts": {
     "build": "vite build && tsc -p tsconfig.types.json",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint src scripts test --max-warnings=0",
     "format": "prettier --write \"src/**/*.{ts,js}\" \"scripts/**/*.{ts,js}\" \"test/**/*.{ts,js}\"",
