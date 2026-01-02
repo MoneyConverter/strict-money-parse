@@ -14,6 +14,37 @@ _Originally developed for [MoneyConvert.net](https://moneyconvert.net/) — a cu
 
 Zero runtime dependencies • Fully typed • Extensively tested against real e-commerce data from 40+ countries • Only **3.82 kB gzipped** (ESM) / **2.92 kB** (CJS)
 
+## 📑 Table of Contents
+
+- [🌍 Battle-Tested with Real-World Data](#-battle-tested-with-real-world-data)
+- [✨ Features](#-features)
+- [📦 Installation](#-installation)
+- [🚀 Quick Start](#-quick-start)
+- [📖 API Reference](#-api-reference)
+- [💡 Usage Examples](#-usage-examples)
+  - [European Number Formats](#european-number-formats)
+  - [Asian Currencies](#asian-currencies)
+  - [Handling Ambiguous Symbols](#handling-ambiguous-symbols)
+  - [ISO 4217 Code Detection](#iso-4217-code-detection)
+  - [False Positive Prevention](#false-positive-prevention)
+  - [HTML Content Parsing](#html-content-parsing)
+- [🔍 Advanced API](#-advanced-api)
+- [🧮 Number Format Detection](#-number-format-detection)
+- [🗂️ Project Structure](#️-project-structure)
+- [🧪 Testing Methodology](#-testing-methodology)
+- [📊 Data Sources & Methodology](#-data-sources--methodology)
+- [�� Design Principles](#-design-principles)
+- [📈 Performance](#-performance)
+- [🛠️ Development](#️-development)
+- [📝 License](#-license)
+- [🤝 Contributing](#-contributing)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [📞 Support](#-support)
+- [🗺️ Roadmap](#️-roadmap)
+
+---
+
+
 ---
 
 ## 🌍 Battle-Tested with Real-World Data
@@ -56,6 +87,10 @@ yarn add strict-money-parse
 
 ```bash
 pnpm add strict-money-parse
+
+```bash
+bun add strict-money-parse
+```
 ```
 
 **Requirements:** Node.js ≥18.0.0
