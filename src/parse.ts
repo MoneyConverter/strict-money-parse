@@ -54,7 +54,6 @@ function parseNumericToken(
       .replace(decimalSep, ".");
   } else if (lastDot !== -1 || lastComma !== -1) {
     // Only one separator
-    const sep = lastDot !== -1 ? "." : ",";
     const sepIndex = lastDot !== -1 ? lastDot : lastComma;
     const digitsAfter = token.slice(sepIndex + 1).replace(/\D/g, "").length;
     
