@@ -5,7 +5,7 @@
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/strict-money-parse?style=flat-square)](https://bundlephobia.com/package/strict-money-parse)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Test Coverage](https://img.shields.io/badge/coverage-99.2%25-brightgreen?style=flat-square)](https://github.com/yourusername/strict-money-parse)
+[![Test Coverage](https://img.shields.io/badge/coverage-99.2%25-brightgreen?style=flat-square)](https://github.com/MoneyConverter/strict-money-parse)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/MoneyConverter/strict-money-parse/ci.yml?style=flat-square)](https://github.com/MoneyConverter/strict-money-parse/actions)
 
 **A production-ready TypeScript library for parsing monetary values from real-world strings with evidence-based currency detection.**
