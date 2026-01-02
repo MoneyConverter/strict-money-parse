@@ -1,8 +1,6 @@
 // License checker - ensures no GPL/AGPL/LGPL dependencies
 
 import { execSync } from "node:child_process";
-import fs from "node:fs";
-import path from "node:path";
 
 // Forbidden licenses
 const FORBIDDEN_LICENSES = [
@@ -15,21 +13,6 @@ const FORBIDDEN_LICENSES = [
   "LGPL-2.0",
   "LGPL-2.1",
   "LGPL-3.0",
-];
-
-// Allowed licenses
-const ALLOWED_LICENSES = [
-  "MIT",
-  "Apache-2.0",
-  "BSD",
-  "BSD-2-Clause",
-  "BSD-3-Clause",
-  "ISC",
-  "0BSD",
-  "Unicode-3.0",
-  "CC0-1.0",
-  "Unlicense",
-  "WTFPL",
 ];
 
 interface PackageInfo {
@@ -49,12 +32,12 @@ function getLicenseInfo(): PackageInfo[] {
     const data = JSON.parse(output);
     const packages: PackageInfo[] = [];
     
-    function traverse(obj: any, depth = 0) {
+    function traverse(obj: { dependencies?: Record<string, unknown> }, depth = 0) {
       if (depth > 20) return; // Prevent infinite loops
       
       if (obj.dependencies) {
         for (const [name, info] of Object.entries(obj.dependencies)) {
-          const pkg = info as any;
+          const pkg = info as { version?: string; license?: string; dependencies?: Record<string, unknown> };
           packages.push({
             name,
             version: pkg.version,
