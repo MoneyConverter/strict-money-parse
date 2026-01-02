@@ -1,0 +1,57 @@
+{
+  "name": "strict-money-parse",
+  "version": "1.0.0",
+  "description": "Strict TypeScript library for parsing monetary values from strings with evidence-based currency detection",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "money",
+    "currency",
+    "parser",
+    "price",
+    "iso4217",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.types.json",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src scripts test --max-warnings=0",
+    "format": "prettier --write \"src/**/*.{ts,js}\" \"scripts/**/*.{ts,js}\" \"test/**/*.{ts,js}\"",
+    "update-iso4217": "tsx scripts/update-iso4217.ts",
+    "check-licenses": "tsx scripts/check-licenses.ts",
+    "prepublishOnly": "npm run build && npm run check-licenses && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
+    "@vitest/coverage-v8": "^4.0.16",
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16"
+  }
+}
