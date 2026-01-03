@@ -41,6 +41,8 @@ export const UNIQUE_SYMBOLS: Record<string, string> = {
   "Ft": "HUF",
   "лв": "BGN",
   "лв.": "BGN",
+  "грн": "UAH",
+  "грн.": "UAH",
   "TL": "TRY",
   "ALL": "ALL",
   "ر.س.": "SAR",

@@ -1046,6 +1046,34 @@ describe("ISO 4217 Code Detection", () => {
     expect(result.currency).toBe("UAH");
   });
 
+  test('UAH with "грн" symbol suffix', () => {
+    const result = parsePriceString("2.30 грн");
+    expect(result.status).toBe("CONFIRMED");
+    expect(result.rawAmount).toBe(2.3);
+    expect(result.currency).toBe("UAH");
+  });
+
+  test('UAH with "грн." symbol suffix (with dot)', () => {
+    const result = parsePriceString("2.30 грн.");
+    expect(result.status).toBe("CONFIRMED");
+    expect(result.rawAmount).toBe(2.3);
+    expect(result.currency).toBe("UAH");
+  });
+
+  test('UAH with "грн" symbol prefix', () => {
+    const result = parsePriceString("грн 1500");
+    expect(result.status).toBe("CONFIRMED");
+    expect(result.rawAmount).toBe(1500);
+    expect(result.currency).toBe("UAH");
+  });
+
+  test('UAH with "грн." symbol prefix (with dot)', () => {
+    const result = parsePriceString("грн. 1500");
+    expect(result.status).toBe("CONFIRMED");
+    expect(result.rawAmount).toBe(1500);
+    expect(result.currency).toBe("UAH");
+  });
+
   test("JPY prefix with space", () => {
     const result = parsePriceString("JPY 15,800");
     expect(result.status).toBe("CONFIRMED");
