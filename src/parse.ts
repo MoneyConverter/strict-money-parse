@@ -57,11 +57,18 @@ function parseNumericToken(
     const sepIndex = lastDot !== -1 ? lastDot : lastComma;
     const digitsAfter = token.slice(sepIndex + 1).replace(/\D/g, "").length;
     
-    // If digits after separator <= maxFractionDigits, treat as decimal
-    if (digitsAfter <= maxFractionDigits && digitsAfter > 0) {
+    // Disambiguation logic:
+    // - Exactly 3 digits: almost always thousands (1,234 → 1234, not 1.234)
+    // - 1-2 digits: decimal if within maxFractionDigits
+    // - 4+ digits: almost always decimal (1.23456 → 1.23456, not 123456)
+    const isLikelyDecimal = digitsAfter > 0 && 
+      ((digitsAfter <= maxFractionDigits && digitsAfter !== 3) || digitsAfter > 3);
+    
+    if (isLikelyDecimal) {
+      // Treat as decimal separator
       cleanToken = cleanToken.replace(/[\s'"_,.](?=.*[,.])/g, "").replace(",", ".");
     } else {
-      // Otherwise, treat as thousand separator
+      // Treat as thousand separator (exactly 3 digits or 0 digits)
       cleanToken = cleanToken.replace(/[\s'"_,.]/g, "");
     }
   } else {
